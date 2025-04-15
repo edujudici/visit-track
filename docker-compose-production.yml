@@ -8,9 +8,9 @@ services:
     volumes:
       - .:/app
     environment:
-      VIRTUAL_HOST: ${VIRTUAL_HOST}
-      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
-      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      VIRTUAL_HOST: visittrack.local,www.visittrack.local
+      LETSENCRYPT_HOST: visittrack.local,www.visittrack.local
+      LETSENCRYPT_EMAIL: edujudici@gmail.com
     tty: true
     stdin_open: true
     networks:
