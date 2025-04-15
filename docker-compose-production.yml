@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 80
+    volumes:
+      - .:/app
+    environment:
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+    tty: true
+    stdin_open: true
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    name: nginx-proxy
+    external: true
