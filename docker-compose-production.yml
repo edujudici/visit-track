@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     expose:
-      - 80
+      - 8080
     volumes:
       - .:/app
     environment:
